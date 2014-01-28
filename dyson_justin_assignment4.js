@@ -6,16 +6,24 @@ Completed 01/30/14
 */
 
 // GLOBAL VARIABLES
-var userInput = ""; 
-var isValidEntry; // boolean
+//var for function 1
+var lowerCaseString; 
+var titleCaseString;
+
+//var for function 2
 var url = ""; 
 var isUrlReturn; 
 
+//var for function 3
+var phoneNumber;
+var isValid; 
 
-// FUNCTION 1: Does a string follow a 123-456-7890 pattern like a phone number?
-// TO SOLVE: Recieve a phone number. validate that the first 3 characters have a charCodeAt of 0-9, a hyphen, the next 3 characters have a charCodeAt of 0-9, a hyphen, the next 4 characters have a charCodeAt of 0-9. A hyphen has a character code of 45. Numbers are from 48(0) to 57(9).
 
-var validatePhoneNumber = function (userInput) {
+
+// FUNCTION 1: Title-case a string (split into words, then uppercase the first letter of each word).
+// TO SOLVE: go through the string and capitalize the first letter of the string and the first letter after each space.
+
+var toTitleCase = function (lowerCaseString) {
 	
 };
 
@@ -24,31 +32,56 @@ var validatePhoneNumber = function (userInput) {
 // FUNCTION 2: Is the string a URL (Does it start with http:// or https://)?
 
 var isUrl = function (url) {	// accepts a string
-	var returnValue = false;
+	var isUrlValue = false;
 	
 	if ((url.substr(0,7) === "http://") || (url.substr(0,8) === "https://")) {
-		returnValue = true;
+		isUrlValue = true;
 	};
 	
-	return returnValue;		// returns a boolean value
+	return isUrlValue;		// returns a boolean value
 };
 
-// FUNCTION 3
+// FUNCTION 3: Does a string follow a 123-456-7890 pattern like a phone number?
+
+var validPhoneNumber = function (phoneNumber) {
+	var hasHyphen = false;
+	var isNumbers = false;
+	var isValid = false; 
+	var isTwelveChar = false; 
+	
+	if (phoneNumber.charCodeAt(3) === 45 && phoneNumber.charCodeAt(7) === 45) {
+		hasHyphen = true;
+	};
+	if (!isNaN(phoneNumber.substr(0,3)) && !isNaN(phoneNumber.substr(4,3)) && !isNaN(phoneNumber.substr(8,4))) {
+		isNumbers = true;
+	};
+	if (phoneNumber.length === 12) {
+		isTwelveChar = true;
+	};
+	if (hasHyphen && isNumbers && isTwelveChar) {
+		isValid = true;
+	};
+	
+	return isValid;
+};
 
 // FUNCTION 4
-
 // FUNCTION 5
-
 // FUNCTION 6
-
 // MAIN CODE
 
-//main code for function 1
-//userInput = prompt("Type in a phone number.", "xxx-xxx-xxxx");
-//isValidEntry = validatePhoneNumber(userInput);
-//console.log("Is this a valid phone number? " + isValidEntry);
+/*//main code for function 1
+lowerCaseString = "hello world";
+titleCaseString = toTitleCase(lowerCaseString);
+console.log(lowerCaseString + "vs. " + titleCaseString);
 
 //main code for function 2
 url = "http://www.fullsail.edu";
 isUrlReturn = isUrl(url);
 console.log(isUrlReturn);
+*/
+//main code for function 3
+phoneNumber = "407-695-0100";
+isValid = validPhoneNumber(phoneNumber);
+console.log(isValid);
+
