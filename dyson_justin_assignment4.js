@@ -21,16 +21,27 @@ var isValid;
 
 
 // FUNCTION 1: Title-case a string (split into words, then uppercase the first letter of each word).
-// TO SOLVE: go through the string and capitalize the first letter of the string and the first letter after each space.
-
 var toTitleCase = function (lowerCaseString) {
+	var titleCaseString;
+	var lowerCaseStringArray = lowerCaseString.split(" ");
+	var firstLetter;
+	var upperCaseStringArray = [];
+	var upperCaseWord;
+			
+	for (var i = 0; i < lowerCaseStringArray.length; i++) {
+			console.log(lowerCaseStringArray[i]);
+
+			firstLetter = lowerCaseStringArray[i].charAt(0).toUpperCase();
+			upperCaseWord = firstLetter + lowerCaseStringArray[i].slice(1);
+			upperCaseStringArray.push(upperCaseWord);
+	};
 	
+	titleCaseString = upperCaseStringArray.join(" ");
+			
+	return titleCaseString;
 };
 
-
-
 // FUNCTION 2: Is the string a URL (Does it start with http:// or https://)?
-
 var isUrl = function (url) {	// accepts a string
 	var isUrlValue = false;
 	
@@ -42,7 +53,6 @@ var isUrl = function (url) {	// accepts a string
 };
 
 // FUNCTION 3: Does a string follow a 123-456-7890 pattern like a phone number?
-
 var validPhoneNumber = function (phoneNumber) {
 	var hasHyphen = false;
 	var isNumbers = false;
@@ -70,16 +80,16 @@ var validPhoneNumber = function (phoneNumber) {
 // FUNCTION 6
 // MAIN CODE
 
-/*//main code for function 1
+//main code for function 1
 lowerCaseString = "hello world";
 titleCaseString = toTitleCase(lowerCaseString);
-console.log(lowerCaseString + "vs. " + titleCaseString);
+console.log(lowerCaseString + " vs. " + titleCaseString);
 
 //main code for function 2
 url = "http://www.fullsail.edu";
 isUrlReturn = isUrl(url);
 console.log(isUrlReturn);
-*/
+
 //main code for function 3
 phoneNumber = "407-695-0100";
 isValid = validPhoneNumber(phoneNumber);
