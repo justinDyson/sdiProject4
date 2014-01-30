@@ -33,7 +33,7 @@ var numberAsNumber;
 
 
 // FUNCTION 1: Title-case a string (split into words, then uppercase the first letter of each word).
-var toTitleCase = function (lowerCaseString) {
+var toTitleCase = function (lowerCaseString) {		// accepts a string
 	var titleCaseString;
 	var lowerCaseStringArray = lowerCaseString.split(" ");
 	var firstLetter;
@@ -49,7 +49,7 @@ var toTitleCase = function (lowerCaseString) {
 	
 	titleCaseString = upperCaseStringArray.join(" ");
 			
-	return titleCaseString;
+	return titleCaseString;		// returns a string
 };
 
 // FUNCTION 2: Is the string a URL (Does it start with http:// or https://)?
@@ -64,7 +64,7 @@ var isUrl = function (url) {	// accepts a string
 };
 
 // FUNCTION 3: Does a string follow a 123-456-7890 pattern like a phone number?
-var validPhoneNumber = function (phoneNumber) {
+var validPhoneNumber = function (phoneNumber) {		//accepts a string of a number
 	var hasHyphen = false;
 	var isNumbers = false;
 	var isValid = false; 
@@ -83,12 +83,12 @@ var validPhoneNumber = function (phoneNumber) {
 		isValid = true;
 	};
 	
-	return isValid;
+	return isValid;		//returns a boolean
 };
 
 // FUNCTION 4: Find the total value of just the numbers in an array, even if some of the items are not numbers.
 
-var addNumbers = function (myArray) {
+var addNumbers = function (myArray) {		// accepts an array
 	var total = 0;
 	
 	
@@ -98,23 +98,23 @@ var addNumbers = function (myArray) {
 		};
 	};
 	
-	return total; 
+	return total; 	// returns a number
 
 };
 
 // FUNCTION 5: Format a number to use a specific number of decimal places
 
-var asMoney = function (amount, decimalPlaces) {
+var asMoney = function (amount, decimalPlaces) {	// accepts 2 numbers
 	var dollarAmt;
 	
 	dollarAmt = amount.toFixed(decimalPlaces);
 	
-	return dollarAmt;
+	return dollarAmt;		// returns a number
 };
 
 // FUNCTION 6: Given a string version of a number, such as “42”, return the value as an actual Number data type, such as 42.
 
-var convertToNumber = function (numberAsString) {
+var convertToNumber = function (numberAsString) {		// accepts a string of a number
 	var convertedString; 
 	
 	if (!isNaN(numberAsString)) {
@@ -123,7 +123,7 @@ var convertToNumber = function (numberAsString) {
 		convertedString = "Oops! You didn't type in a number as a string.";
 	};
 	
-	return convertedString; 
+	return convertedString; 	// returns a number 
 };
 
 // MAIN CODE
