@@ -25,6 +25,11 @@ var result;
 //var for function 5
 var amount = 10.015;
 var decimalPlaces = 2;
+var amtInDollars = 0;
+
+//var for function 6
+var numberAsString = "21"
+var numberAsNumber;
 
 
 // FUNCTION 1: Title-case a string (split into words, then uppercase the first letter of each word).
@@ -36,7 +41,6 @@ var toTitleCase = function (lowerCaseString) {
 	var upperCaseWord;
 			
 	for (var i = 0; i < lowerCaseStringArray.length; i++) {
-			console.log(lowerCaseStringArray[i]);
 
 			firstLetter = lowerCaseStringArray[i].charAt(0).toUpperCase();
 			upperCaseWord = firstLetter + lowerCaseStringArray[i].slice(1);
@@ -108,9 +112,22 @@ var asMoney = function (amount, decimalPlaces) {
 	return dollarAmt;
 };
 
-// FUNCTION 6
+// FUNCTION 6: Given a string version of a number, such as “42”, return the value as an actual Number data type, such as 42.
+
+var convertToNumber = function (numberAsString) {
+	var convertedString; 
+	
+	if (!isNaN(numberAsString)) {
+		convertedString = parseFloat(numberAsString);
+	} else {
+		convertedString = "Oops! You didn't type in a number as a string.";
+	};
+	
+	return convertedString; 
+};
+
 // MAIN CODE
-/*
+
 //main code for function 1
 lowerCaseString = "hello world";
 titleCaseString = toTitleCase(lowerCaseString);
@@ -119,17 +136,21 @@ console.log(lowerCaseString + " vs. " + titleCaseString);
 //main code for function 2
 url = "http://www.fullsail.edu";
 isUrlReturn = isUrl(url);
-console.log(isUrlReturn);
+console.log("Is " + url + " a valid URL? " + isUrlReturn);
 
 //main code for function 3
 phoneNumber = "407-695-0100";
 isValid = validPhoneNumber(phoneNumber);
-console.log(isValid);
+console.log("Is " + phoneNumber + " a valid telephone number? " + isValid);
 
 //main code for function 4
 result = addNumbers(myArray);
 console.log("The numbers total: " + result);
-*/
+
 //main code for function 5
 amtInDollars = asMoney(amount,decimalPlaces);
 console.log("10.015 expressed in a dollar amount is $" + amtInDollars);
+
+//main code for function 6
+numberAsNumber = convertToNumber(numberAsString)
+console.log(numberAsString + " converts to a number as: " + numberAsNumber +  ". " + numberAsString + " is a " + typeof(numberAsString) + " but " + numberAsNumber +" is a " + typeof(numberAsNumber));
