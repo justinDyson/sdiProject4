@@ -18,6 +18,9 @@ var isUrlReturn;
 var phoneNumber;
 var isValid; 
 
+//var for function 4
+var myArray = [1, "pickles" , 3 , "onions" , 5 , "10" , 6 , "SDI"];
+var result;
 
 
 // FUNCTION 1: Title-case a string (split into words, then uppercase the first letter of each word).
@@ -75,11 +78,26 @@ var validPhoneNumber = function (phoneNumber) {
 	return isValid;
 };
 
-// FUNCTION 4
+// FUNCTION 4: Find the total value of just the numbers in an array, even if some of the items are not numbers.
+
+var addNumbers = function (myArray) {
+	var total = 0;
+	
+	
+	for(var i in myArray) { 
+		if (!isNaN(myArray[i]) && typeof(myArray[i]) != "string") {
+			total += myArray[i]; 
+		};
+	};
+	
+	return total; 
+
+};
+
 // FUNCTION 5
 // FUNCTION 6
 // MAIN CODE
-
+/*
 //main code for function 1
 lowerCaseString = "hello world";
 titleCaseString = toTitleCase(lowerCaseString);
@@ -95,3 +113,7 @@ phoneNumber = "407-695-0100";
 isValid = validPhoneNumber(phoneNumber);
 console.log(isValid);
 
+//main code for function 4
+result = addNumbers(myArray);
+console.log("The numbers total: " + result);
+*/
