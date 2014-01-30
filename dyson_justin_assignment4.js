@@ -22,6 +22,10 @@ var isValid;
 var myArray = [1, "pickles" , 3 , "onions" , 5 , "10" , 6 , "SDI"];
 var result;
 
+//var for function 5
+var amount = 10.015;
+var decimalPlaces = 2;
+
 
 // FUNCTION 1: Title-case a string (split into words, then uppercase the first letter of each word).
 var toTitleCase = function (lowerCaseString) {
@@ -94,7 +98,16 @@ var addNumbers = function (myArray) {
 
 };
 
-// FUNCTION 5
+// FUNCTION 5: Format a number to use a specific number of decimal places
+
+var asMoney = function (amount, decimalPlaces) {
+	var dollarAmt;
+	
+	dollarAmt = amount.toFixed(decimalPlaces);
+	
+	return dollarAmt;
+};
+
 // FUNCTION 6
 // MAIN CODE
 /*
@@ -117,3 +130,6 @@ console.log(isValid);
 result = addNumbers(myArray);
 console.log("The numbers total: " + result);
 */
+//main code for function 5
+amtInDollars = asMoney(amount,decimalPlaces);
+console.log("10.015 expressed in a dollar amount is $" + amtInDollars);
